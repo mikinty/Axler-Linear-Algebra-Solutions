@@ -1,0 +1,80 @@
+\usepackage{bm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref} % allow for URL wrapping
+\usepackage{mathtools}
+\usepackage[standard]{ntheorem}
+\usepackage[super]{nth}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{subfig}
+\usepackage{soul}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{titling}
+\usepackage{verbatim}
+\usepackage{xspace}
+
+\title{Linear Algebra Done Right Solutions}
+\author{Michael You}
+\date{}
+
+% Custom math shortcuts
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator\cis{cis}
+\DeclareMathOperator\vspan{span}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\paren}{(}{)}
+\DeclarePairedDelimiter{\bracken}{[}{]}
+\DeclarePairedDelimiter{\bracen}{\{}{\}}
+\newcommand{\pa}[1]{\paren*{#1}}
+\newcommand{\pbra}[1]{\bracken*{#1}}
+\newcommand{\pbrac}[1]{\bracen*{#1}}
+
+% Math symbols
+\newcommand{\Z}{\bm{Z}}
+\newcommand{\R}{\bm{R}}
+\newcommand{\C}{\bm{C}}
+\newcommand{\Q}{\bm{Q}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand{\interior}[1]{%
+  {\kern0pt#1}^{\mathrm{o}}%
+}
+\renewcommand{\complement}[1]{%
+  {\kern0pt#1}^{\mathrm{c}}%
+}
+\newcommand{\closure}[1]{%
+  \overline{\kern0pt#1}%
+}
+\newcommand{\limsupn}{\limsup_{n\to\infty}}
+
+% Exercise theorem env
+\theoremstyle{break}
+\theorembodyfont{\upshape} % No italics in body font
+\renewtheorem{definition}{Definition}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{tip}{Tip}[section]
+\newtheorem{identity}{Identity}[section]
+
+% Environment Shortcuts
+\newcommand{\bx}[1]{\begin{exercise} #1 \end{exercise}}
+\newcommand{\ea}[1]{\begin{enumerate}[label=(\alph*)] #1 \end{enumerate}}
+
+% Shortcuts
+\newcommand{\AFSOC}{\text{AFSOC}\xspace}
+\newcommand{\andtext}{\text{ and }}
+
+% Extras
+\newcommand{\TODO}{\hl{\textbf{TODO}}\xspace}
+
+% Pathing
+\newcommand{\subDir}[1]{chapters/chapter\currChapter/chapter\currChapter-#1}

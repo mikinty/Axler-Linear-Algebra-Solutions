@@ -1,0 +1,74 @@
+\section{Definition of Vector Space}
+\setcounter{exercise}{0}
+
+The vector space definition in this chapter is very important!
+
+\begin{definition}
+  A \textbf{vector space} is a set $V$ along with an addition on $V$ and a scalar multiplication on $V$ such that the following properties hold:
+
+  \begin{itemize}
+    \item commutativity
+          \begin{equation*}
+            u + v = v+ v \quad\forall u, v \in V
+          \end{equation*}
+    \item associativity
+          \begin{align*}
+             & \forall u, v, w \in V, a, b, \in \mathbf{F}          \\
+             & (u + v) + w = u + (v + w) \text{ and } (ab)v = a(bv)
+          \end{align*}
+    \item additive identity
+          \begin{equation*}
+            \exists 0 \in V \quad \forall v\,, v + 0 = v
+          \end{equation*}
+    \item additive inverse
+          \begin{equation*}
+            \forall v \in V, \exists w \in V \quad v + w = 0
+          \end{equation*}
+    \item multiplicative identity
+          \begin{equation*}
+            \forall v \in V, 1v =v
+          \end{equation*}
+    \item distributive properties
+          \begin{align*}
+             & \forall a, b \in \mathbf{F} \text{ and } \forall u, v \in V \\
+             & a(u + v) = au + av \text{ and } (a+b)v = av + bv
+          \end{align*}
+  \end{itemize}
+\end{definition}
+
+\bx{
+  The additive inverse of $v$ is $-v$. The additive inverse of $-v$ is $-(-v)$.
+  We have
+  \begin{align*}
+    v + -v & = 0 = -v + -(-v) \\
+    v      & = -(-v)
+  \end{align*}
+}
+
+\bx{
+  Just do it by cases.
+
+  I think we have to prove it is not possible for $a \neq 0$ and $v \neq 0$ though...
+  In this case you'd do an AFSOC, but showing $av \neq 0$ I'm not sure how to do without using information e.g. that two nonzero elements multiplied together is not zero (this is not trivial btw, e.g. you can have two non zero matrices that multiply to be 0).
+}
+
+\bx{
+  Because $x = \frac{1}{3}(w-v)$
+}
+
+\bx{
+  Since the empty set doesn't have elements, any statement with $\forall$ will be vacuously true.
+  The only statement that doesn't look like that is the additive identity, which we can confirm is not true because $0 \not\in\emptyset$.
+}
+
+\bx{
+  If we can replace the additive identity, then we should be able to derive it from our existing properties.
+
+  So let's start with some $v \in V$, we want to find some $w \in V$ such that $v + w = 0$.
+
+  I think we can choose $w = 0v - v$?
+}
+
+\bx{
+  skip
+}

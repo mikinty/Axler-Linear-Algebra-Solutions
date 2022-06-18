@@ -1,0 +1,98 @@
+\section{Subspaces}
+\setcounter{exercise}{0}
+
+Subspace property here is very important
+
+\begin{definition}
+  $U \subset V$ is a \textbf{subspace} of $V$ if $U$ is also a vector space.
+
+  The conditions for a subspace $U \subset V$ are:
+  \begin{enumerate}
+    \item additive identity
+          \begin{equation*}
+            0 \in U
+          \end{equation*}
+    \item closed under addition
+          \begin{equation*}
+            u, w \in U \implies u + w \in U
+          \end{equation*}
+    \item closed under scalar multiplication
+          \begin{equation*}
+            a \in \mathbf{F} \andtext u \in U \implies au \in U
+          \end{equation*}
+  \end{enumerate}
+\end{definition}
+
+\bx{
+  \ea{
+    \item yes
+    \item no scalar fails
+    \item Not closed under addition
+    \item Yes
+  }
+}
+
+\bx{
+  We have to confirm, I'll just point out the ones that don't work.
+  \ea{
+    \item if $b \neq 0$ then scaling doesn't work
+    \item yes
+    \item yes
+    \item not close dunder addition if $b \neq 0$.
+    \item Limit 0 is key, another limit point and this won't work.
+  }
+}
+
+\setcounter{exercise}{14}
+
+\bx{
+  $U + U = U$, since $\forall u \in U, 2u \in U$
+}
+
+\bx{
+  Commutativity should hold.
+}
+
+\bx{
+  Yes should be associative via field properties.
+}
+
+\bx{
+  I think they all should, since $0$ is in the subspace and scalar is closed, so we have $v, -v$ for any $v \in V$.
+}
+
+\bx{
+  False, $U_1 = (u, 0), U_2 = (0, u), W = (x, y)$
+}
+
+\bx{
+  $W = (0, w_1, 0, w_2)$
+}
+
+\bx{
+  Can we not just choose a trivial $W$ like $W = \mathbf{F}^5$?
+
+  Otherwise, we notice that $x, y$ are the only independent variables in the tuple, so we need 3 more tuples, so we just choose $W = (0, 0, x, y, z)$.
+  \label{chap1:3:pr21}
+}
+
+\bx{
+  As we saw in \ref{chap1:3:pr21}, we have 3 degrees of freedom, so we can choose
+  \begin{align*}
+    W_1 & = (0, 0, w_1, 0, 0) \\
+    W_2 & = (0, 0, 0, w_2, 0) \\
+    W_3 & = (0, 0, 0, 0, w_3)
+  \end{align*}
+}
+
+\bx{
+  False.
+
+  The intuition here is that the part $W$ is ``missing'' from $V$ is constant, but the trick is that we can have one of the $U_1$ ``over contribute'' and the other ``under contribute''.
+
+  So we can choose like $W = (x, y)$ and then $U_1 = (x, 0)$ and then $U_2 = (x, y)$ and the result is both sums are $\mathbb{R}^2$.
+}
+
+\bx{
+  skip
+}
