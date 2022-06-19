@@ -1,2 +1,9 @@
 # Axler-Linear-Algebra-Solutions
-Solutions to [Linear Algebra Done Right by Sheldon Axler, 3rd Edition](https://amzn.to/3tIzWOy)
+
+Solutions to [Linear Algebra Done Right by Sheldon Axler, 3rd Edition](https://amzn.to/3y16aqJ).
+
+Linear Algebra is my favorite subject and probably the most important math you'll learn in your life.
+
+The PDF is located in the [`build/`](./build/main.pdf) folder of the repo.
+
+Lastly, if you found this guide helpful, consider [buying me a coffee](https://www.buymeacoffee.com/mikinty)!
