@@ -1,0 +1,101 @@
+\section{Invariant Subspaces}
+
+\begin{definition}
+  Suppose $T \in \L(V)$. A subspace $U$ of $V$ is called \textbf{invariant} under $T$ if $u \in U$ implies $Tu \in U$.
+\end{definition}
+
+I think having this definition of an invariant subspace is cool, as usually we think of eigenvalues and eigenvectors as magical $Tv = \lambda v$ property, but not as the invariant subspace of $\vspan v$.
+
+\begin{definition}
+  Suppose $T \in \L(V)$. A number $\lambda \in \F$ is called an \textbf{eigenvalue} of $T$ if there exists $v \in V$ such that $v \neq 0$ and $Tv = \lambda v$.
+  This $v$ is called an \textbf{eigenvector} of $T$ corresponding to $\lambda$.
+\end{definition}
+
+I think the cool part of linear algebra is that the linear independence, span, dimension and other properties we learned earlier all apply to linearly-behaving entities.
+See the next Theorem.
+
+\begin{theorem}
+  Let $T \in \L(V)$. Suppose $\lambda_1, \dots, \lambda_m$ are distinct eigenvalues of $T$ and $v_1, \dots, v_m$ are corresponding eigenvectors. Then $v_1, \dots, v_m$ is linearly independent.
+\end{theorem}
+
+I think this chapter is lacking practical techniques to solve for eigenvalues and eigenvectors, but it is a second course on Linear Algebra after all\dots and it's also more pure math anyway.
+
+\bx{
+  \ea{
+    \item $u \in U$ means $Tu = 0 \in U$.
+    \item $u \in U$ means $Tu \in \vrange T \implies Tu \in U$.
+  }
+}
+
+\bx{
+  Choose $v \in \vnull S$,
+  \begin{align*}
+    Sv    & = 0                             \\
+    TSv   & = T(0) = 0                      \\
+    STv   & = 0 \tag{assumption of problem} \\
+    S(Tv) & = 0
+  \end{align*}
+  Therefore $Tv \in \vnull S$.
+  \label{chap5:1:pr2}
+}
+
+\bx{
+  I think this is essentially a repeat of \ref{chap5:1:pr2}.
+}
+
+\bx{
+  We can use the distributive property of $T$ since it is linear, and case on each $U_i$.
+}
+
+\bx{
+  If we let this collection be $U_i$, then if we have some $u \in \bigcap_i U_i$, then $Tu \in U_i, \forall i \implies \in \bigcap_i U_i$.
+}
+
+\bx{
+  Seems true.
+}
+
+\bx{
+  Our system of equations is
+  \begin{align*}
+    -3y & = \lambda x \\
+    x   & = \lambda y
+  \end{align*}
+  so we have
+  \begin{equation*}
+    -3y = \lambda^2y  \implies \lambda^2 = -3
+  \end{equation*}
+  and we find $\lambda = \pm\sqrt{3}i$.
+}
+
+\bx{
+  Our system of equations is
+  \begin{align*}
+    w & = \lambda z \\
+    z & = \lambda w
+  \end{align*}
+  so we have
+  \begin{equation*}
+    w = \lambda^2w  \implies \lambda^2 = 1
+  \end{equation*}
+  and we find $\lambda = \pm 1$.
+}
+
+\bx{
+  Our system of equations is
+  \begin{align*}
+    2z_2 & = \lambda z_1 \\
+    0    & = \lambda z_2 \\
+    5z_3 & = \lambda z_3
+  \end{align*}
+  I think here we have to conclude that $z_2 = 0$, otherwise if $\lambda = 0$ then all $z_i = 0$, and that wouldn't be an eigenvector.
+
+  Then we have $0 = \lambda z_1$, and we conclude $z_1 = 0$. We are just left with $\lambda = 5$, and our eigenvector is $(0, 0, 1)$.
+}
+
+\bx{
+  \ea{
+    \item Eigenvectors are the standard basis, with $\lambda = i$ for $e_i$.
+    \item Invariant subspaces are just the spans of $e_i$ individually.
+  }
+}

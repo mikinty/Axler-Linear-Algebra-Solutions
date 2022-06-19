@@ -1,0 +1,72 @@
+\section{Eigenvectors and Upper-Triangular Matrices}
+
+\bx{
+  \ea{
+    \item Not actually sure how to prove this is invertible...\TODO
+    \item It's like adding all the parts of $T$ back in.
+  }
+}
+
+\bx{
+  Fundamental Theorem of Algebra.
+}
+
+\bx{
+  $T^2 - I = (T-I)(T+I) = 0$. If $\lambda \neq -1$, then $T \neq -I$, so $T = I$ in this case.
+}
+
+\bx{
+  $P(P-I) = 0$ means that $\vnull P = \vrange (P-I)$. Stuck here...
+}
+
+\bx{
+  The key here is that $(STS^{-1})^n$ expands in a way that cancels out all $S, S^{-1}$ except for the outer ones.
+  E.g.
+  \begin{equation*}
+    \pa{
+      STS^{-1}
+    }^3 =
+    (STS^{-1})
+    (STS^{-1})
+    (STS^{-1})
+    = ST \pa{
+      S^{-1}
+      S
+    }
+    T
+    \pa{
+      S^{-1}
+      S
+    }
+    TS^{-1}
+    = ST^3S^{-1}
+  \end{equation*}
+}
+
+\bx{
+  Applying $T^n$ to $U$ will still be invariant in $U$.
+}
+
+\bx{
+  $T^2 = 9 \implies (T-3)(T+3) = 0$.
+}
+
+\bx{
+  Not sure if this exists.
+}
+
+\bx{
+  By FTA we can write $p(T) = \prod_{i} (T - \lambda_i I)$
+  So for any $(T-\lambda_i I) v = 0$, this implies $\lambda_i$ is an eigenvalue, which is a zero of $p$.
+}
+
+\bx{
+  \begin{align*}
+    p(T)v
+     & = \pa{\sum_{i=0}^n a_iT^i}v          \\
+     & = \sum_{i=0}^n a_iT^iv               \\
+     & = \sum_{i=0}^n a_i\lambda_i^i v      \\
+     & = \pa{\sum_{i=0}^n a_i\lambda_i^i} v \\
+     & = p(\lambda)v
+  \end{align*}
+}

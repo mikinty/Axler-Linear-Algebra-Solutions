@@ -1,0 +1,44 @@
+\section{Eigenspaces and Diagonal Matrices}
+
+\begin{theorem}
+  Suppose $V$ is finite-dimensional and $T \in \L(V)$.
+  Let $\lambda_1,\dots,\lambda_m$ denote the distinct eigenvalues of $T$. Then the following are equivalent:
+  \ea{
+    \item $T$ is diagonalizable
+    \item $V$ has a basis consisting of eigenvectors of $T$
+    \item There exist 1-dimensional subspaces $U_1, \dots, U_n$ of $V$, each invariant under $T$, such that
+    \begin{equation}
+      V = \bigoplus_{i=1}^n U_i
+    \end{equation}
+    \item $V = \bigoplus_{i=1}^m E(\lambda_i, T)$
+    \item $\dim V = \sum_{i=1}^m \dim E(\lambda_i, T)$
+  }
+\end{theorem}
+
+\begin{definition}
+  Suppose $T \in \L(V)$ and $\lambda \in \F$. The \textbf{eigenspace} of $T$ corresponding to $\lambda$, denoted $E(\lambda, T)$, is defined by
+  \begin{equation}
+    E(\lambda, T) = \vnull(T - \lambda I).
+  \end{equation}
+  So $E(\lambda, T)$ is the $\vspan$ of all eigenvectors corresponding to $\lambda$ plus the 0 vector.
+\end{definition}
+
+\bx{
+  $V = \vrange T$ since $T$ is diagonalizable, and $\vnull T = \pbrac{0}$.
+}
+
+\bx{
+  I don't think it is always true, we just need a $\vnull T$ that is nontrivial.
+}
+
+\bx{
+  If we have (a) then (b) follows directly. I think (b) also gives (a) pretty easily because we know $\vnull T, \vrange T$ cannot have common elements besides $0$.
+
+  I think (b) gives us (c) directly from the discussion earlier. I think we still need to show (c) $\implies$ (a) or (b)...
+}
+
+\bx{
+  \TODO
+}
+
+I should do more of these problems :)
