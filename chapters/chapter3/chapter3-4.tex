@@ -1,0 +1,106 @@
+\section{Invertibility and Isomorphic Vector Spaces}
+
+The author says the definition of an operator is extremely important.
+
+\begin{definition}
+  We define \textbf{operator} $\L(V)$ to be
+  \begin{itemize}
+    \item a linear map from a vector space to itself
+    \item The notation $\L(V)$ denotes the set of all operators on $V$. In other words,
+          \begin{equation}
+            \L(V) = \L(V, V)
+          \end{equation}
+  \end{itemize}
+\end{definition}
+
+I'm going to be honest that I don't really understand this definition (as in how it works and why it's important), so I'm getting rekt in the problems already.
+
+These problems are getting harder for sure.
+
+\bx{
+  We can verify
+  \begin{align*}
+    (ST)^{-1}(ST) & = T^{-1}S^{-1}ST = T^{-1} I T = T^{-1} T = I  \\
+    (ST)(ST)^{-1} & = ST T^{-1}S^{-1} = S I S^{-1} = S S^{-1} = I
+  \end{align*}
+}
+
+\bx{
+  The operators are noninvertible, so they cannot be surjective or injective.
+
+  A little stuck here but I think by using that fact you can show that they may not be closed under addition or something of that sort.
+}
+
+\bx{
+  If $T$ invertible exists, then $S$ must be injective, otherwise if $S(x) = S(x') = v$ then $T(v)$ cannot be defined.
+
+  If $S$ is injective, then we know for every $v \in V$, there is at most one $u \in U$ such that $S(u) = v$, so we just define $T$ to invert these $v$ that have a corresponding $u$.
+}
+
+\bx{
+  If $T_1 = ST_2$, then suppose $v \in \vnull T_1$. Then we have
+  \begin{align*}
+    T_1 v = 0 & = ST_2 v                                  \\
+    S^{-1}(0) & = S^{-1}ST_2v \tag{Since $S$ invertible.} \\
+    0         & = T_2v
+  \end{align*}
+  so $v \in \vnull T_2$ as well
+
+  If $\vnull T_1 = \vnull T_2$...\TODO
+  My intuition is that since $T_1, T_2$ span the same space (I think...bc of the null spaces being the same), their basis vectors are similar enough where you can make them the same by using some linear map.
+
+  \label{chap3:4:pr3}
+}
+
+\bx{
+  I think the $T_1 = T_2S$ direction is pretty much the same as \ref{chap3:4:pr3}.
+
+  The other direction...also \TODO
+}
+
+\bx{
+  \TODO
+}
+
+\bx{
+  \ea{
+    \item $0 \in E$, $(T_1 + T_2)v = T_1v + T_2v = 0 + 0 = 0$, so $T_1+T_2 \in E$, and $\lambda T v = T(\lambda v) = 0$.
+    \item I think the dimension is 1??? I want to say something about $\vnull V$, but we are only taking a single vector.
+  }
+}
+
+\bx{
+  skip
+}
+
+\bx{
+We know $(ST)^{-1} = T^{-1}S^{-1}$, so if $ST$ is invertible, both $T, S$ need to be invertible\footnote{sorry this is probably not an actual proof}.
+
+Alternatively, if $T, S$ are invertible, then we can define $(ST)^{-1} = T^{-1}S^{-1}$.
+}
+
+\bx{
+  Forward direction,
+  \begin{align*}
+    ST             & = I           \\
+    STS            & = IS = S      \\
+    S^{-1}STS = TS & = S^{-1}S = I
+  \end{align*}
+
+  Backwards direction,
+  \begin{align*}
+    TS           & = I           \\
+    STS          & = SI = S      \\
+    STSS^{-1} TS & = SS^{-1} = I
+  \end{align*}
+}
+
+\bx{
+  \begin{align*}
+    STU  & = I            \\
+    T    & = S^{-1}U^{-1} \\
+    T^-1 & = US
+  \end{align*}
+}
+
+Sorry did a lackluster job, on we go.

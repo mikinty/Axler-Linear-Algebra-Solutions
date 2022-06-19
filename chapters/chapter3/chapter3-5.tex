@@ -1,0 +1,80 @@
+\section{Products and Quotients of Vector Spaces}
+
+Quotients are something we don't usually get in our intro linear algebra class, so that's cool.
+
+\bx{
+  If $T$ is a linear map, then we get that the graph of $T$ is a subspace pretty easily with linear properties.
+
+  If the graph of $T$ is a subspace, then we have that
+  \begin{align*}
+    (v_1, Tv_1) + (v_2, Tv_2) = (v_1 + v_2, Tv_1 + Tv_2) \in \text{graph of } T
+  \end{align*}
+  here we see that $Tv_1 + Tv_2 = Tv'$ for some $v' \in V$.
+  Then we must have $(v', Tv')$ in the graph as well, which means
+  \begin{equation*}
+    (v_1+v_2, Tv_1 + Tv_2) = (v', Tv')
+  \end{equation*}
+  and we have $v' = v_1+v_2$, so we conclude that $Tv_1 + Tv_2 = T(v_1+v_2)$.
+
+  The proof for scalar is pretty similar.
+}
+
+\bx{
+  If $\exists V_j$ infinite-dimensional, then the cross product could be infinite dimensional.
+}
+
+\bx{
+  Let $U_1, U_2 = (u_1, u_2, u_3, \dots)$, then
+  \begin{equation*}
+    U_1 \cross U_2 = \F^\infty = U_1 + U_2,
+  \end{equation*}
+  but we clearly have multiple choices for $u \in U_1, u' \in U_2$ such that their sum is the same.
+}
+
+\bx{
+  Just intuition here, one is mapping an $m$ tuple's elements each to $W$, the other is a m-tuple of $V_i \to W$ mappings.
+  \label{chap3:5:pr4}
+}
+
+\bx{
+  Very similar intuition to Exercise \ref{chap3:5:pr4}.
+}
+
+\bx{
+  Let's take advantage of the last two exercises, so we have
+  \begin{align*}
+    \L(\F^n, V) & = \prod_{i=1}^n \L(\F, V) \\
+                & = \L(\F, V^n) = V^n
+  \end{align*}
+}
+
+\bx{
+  AFSOC $U \neq W$, then WLOG $\exists w \in W, \not\in U$.
+  Then we have that
+  \begin{equation*}
+    v\in V, \forall u \in U \quad v + w \neq v + u
+  \end{equation*}
+  which violates our assumption.
+}
+
+\setcounter{exercise}{13}
+
+\bx{
+  \ea{
+    \item We can check a few things here
+    \begin{itemize}
+      \item $0 \in U$
+      \item Closed by addition since finite $x_j \neq 0$ will still result in that property
+      \item Closed by scalar since the finite $x_j \neq 0$ still holds
+    \end{itemize}
+    Thus we can conclude the subspace
+
+    \item Consider the mapping $f \,:\, U \to \F^\infty$ where for $u \in U$, say $j$ is the largest $x_j \neq 0$, then
+    \begin{equation*}
+      f(u) = (\dots, x_j, x_j, x_j, \dots)
+    \end{equation*}
+    This $f(u)$ has infinitely many $x_i \neq 0$, so $f(u) \not\in u$, but $f(u) \in \F^\infty$.
+
+    Since there are infinite number of coordinates that are nonzero, we must have infinite dimension.
+  }
+}

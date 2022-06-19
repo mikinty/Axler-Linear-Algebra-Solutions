@@ -1,0 +1,88 @@
+\section{The Vector Space of Linear Maps}
+
+The property of linearity is very crucial.
+
+\begin{definition}
+  A \textbf{linear map} from $V \to W$ is a function $T\,:\, V\to W$ with the following properties:
+  \begin{itemize}
+    \item additivity
+          \begin{equation*}
+            \forall u, v \in V \quad T(u+v) = Tu+Tv
+          \end{equation*}
+    \item homogeneity
+          \begin{equation*}
+            \forall \lambda \in \mathbf{F}, v\in V \quad T(\lambda v) = \lambda(T v)
+          \end{equation*}
+  \end{itemize}
+\end{definition}
+
+\bx{
+  You know $T(0) = 0$ so use that fact for $b$. For $c$ just try any nonzero $x, y, z$.
+}
+
+\bx{
+  skip
+}
+
+\bx{
+  The general idea here is that we use the span of $x_1, \dots, x_n$ to create each coordinate of the element in $\F^m$.
+}
+
+\bx{
+  Suppose $v_1, \dots, v_m$ is linearly dependent, then for some $v_k$ we can write it as a linear combination of the other $v_i$'s, so we have
+  \begin{align*}
+    v_k                               & = \sum_{i\neq k} a_iv_i       \tag{$a_i$ not all $0$} \\
+    T(v_k)                            & = T\pa{\sum_{i\neq k} a_iv_i}                         \\
+    T(v_k)                            & = \sum_{i\neq k} a_iT(v_i)                            \\
+    \sum_{i\neq k} a_iT(v_i) - T(v_k) & = 0
+  \end{align*}
+  the last part is a contradiction because we know $Tv_i$ are linearly dependent.
+}
+
+\bx{
+  Tedious, just verify properties of a vector space in \ref{def:vector_space}.
+}
+
+\bx{
+  skip
+}
+
+\bx{
+  If $\dim V = 1$, then $V = \vspan\pbrac{v}$ for some $v \in V$. That means every element of $V$ can be written as $\lambda v$.
+}
+
+\bx{
+  \begin{equation*}
+    \phi\pa{
+      \pbra{v_1, v_2}
+    } = \sqrt{v_1^2 + v_2^2}
+  \end{equation*}
+}
+
+\bx{
+  I'm stuck, I tried $\cis, \arg$ and no luck.
+}
+
+\bx{
+  AFSOC $T$ is a linear map.
+
+  Suppose $0 \in U$. Then we have $T(0) = 0 = S(0)$ which is not true by $s \neq 0$ assumption.
+
+  So suppose $0 \in V \setminus U$. But then $U$ is not a subspace since $0 \not\in U$.
+}
+
+\bx{
+  I think we can use the construction from before and do $Tv = Sv$ if $v \in U$ and 0 otherwise. If there's no $S \neq 0$ restriction I think the construction works.
+}
+
+\bx{
+  We can trivially map the first $\dim V$ tuple elements of $v$ to the first $\dim V$ tuple elements of $w$, and then pad with a zero, and then pad with two zeros and so on, for an infinite number of maps.
+}
+
+\bx{
+  We just have to choose $m$ linearly independent vectors in $W$, which wouldn't allow $Tv_k = w_k$, otherwise we have $v_1, \dots, v_m$ linearly independent.
+}
+
+\bx{
+  skip
+}

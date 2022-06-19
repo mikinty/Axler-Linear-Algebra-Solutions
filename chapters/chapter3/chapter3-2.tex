@@ -1,0 +1,65 @@
+\section{Null Spaces and Ranges}
+
+\begin{definition}
+  The \textbf{null space} is the subset of inputs that gets mapped to zero.
+
+  More formally, $T \in \mathcal{L}(V, W)$,
+  \begin{equation}
+    \vnull T = \pbrac{
+      v \in V \,:\, Tv = 0
+    }
+  \end{equation}
+\end{definition}
+
+We start learning about relationships between dimension, linearity, null spaces, ranges and domains.
+
+\begin{theorem}
+  Fundamental Theorem of Linear Maps.
+  Suppose $V$ is finite dimensional and $T \in \L(V, W)$. Then $\vrange T$ is finite-dimensional and
+  \begin{equation}
+    \dim V = \dim\vnull T + \dim\vrange T
+  \end{equation}
+\end{theorem}
+
+\bx{
+  $T(v_1, v_2, v_3, v_4, v_5) = (v_1, v_2, 0, 0, 0)$.
+}
+
+\bx{
+  \begin{align*}
+    (ST)^2 v & = (ST)(ST)v                    \\
+             & = (ST)w \tag{$w \in \vnull T$} \\
+             & = S(Tw)                        \\
+             & = S(0)                         \\
+             & = 0
+  \end{align*}
+}
+
+\bx{
+  \ea{
+    \item $\dim\vnull T = 0$
+    \item $z_i \neq 0$ for some set of $\forall i v_i$ are linearly independent
+  }
+}
+
+\bx{
+  $\dim \R^5 = 5 \neq \dim\null T + \dim\vrange T = 2 + 2$.
+}
+
+\bx{
+  Let
+  \begin{equation*}
+    T(w, x, y, z) = (0, 0, w, x)
+  \end{equation*}
+  Then
+  \begin{align*}
+    \vrange T & = (0, 0, v_1, v_2) \\
+    \vnull T  & = (0, 0, v_1, v_2) \\
+  \end{align*}
+}
+
+\bx{
+  $\dim\vrange T \neq \dim \vnull T$ since they have to add up to 5, so they cannot be equal.
+}
+
+gonna power through rest of the book

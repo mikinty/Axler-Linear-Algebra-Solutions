@@ -31,6 +31,8 @@
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator\cis{cis}
 \DeclareMathOperator\vspan{span}
+\DeclareMathOperator\vnull{null}
+\DeclareMathOperator\vrange{range}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\paren}{(}{)}
@@ -41,10 +43,12 @@
 \newcommand{\pbrac}[1]{\bracen*{#1}}
 
 % Math symbols
+\newcommand{\C}{\bm{C}}
+\newcommand{\F}{\bm{F}}
 \newcommand{\Z}{\bm{Z}}
 \newcommand{\R}{\bm{R}}
-\newcommand{\C}{\bm{C}}
 \newcommand{\Q}{\bm{Q}}
+\renewcommand{\L}{\mathcal{L}}
 \newcommand*\conj[1]{\bar{#1}}
 \newcommand{\interior}[1]{%
   {\kern0pt#1}^{\mathrm{o}}%
@@ -78,3 +82,6 @@
 
 % Pathing
 \newcommand{\subDir}[1]{chapters/chapter\currChapter/chapter\currChapter-#1}
+
+% Links
+\newcommand{\linkAxler}{https://amzn.to/3y16aqJ}
