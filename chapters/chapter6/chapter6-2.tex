@@ -1,0 +1,58 @@
+\section{Orthonormal Bases}
+
+Calculating orthonormal bases can be a pain, as you probably remember from \href{https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process}{Gram-Schmidt}.
+
+\begin{definition}
+  A list of vectors is called \textbf{orthonormal} if each vector in the list has norm 1 and is orthogonal to all other vectors in the list.
+
+  E.g. a list $e_1, \dots, e_m$ of vectors in $V$ is orthonormal if
+  \begin{equation}
+    \bangle{
+      e_j, e_k
+    } = \begin{cases}
+      1 & \text{if } j = k,    \\
+      0 & \text{if } j \neq k.
+    \end{cases}
+  \end{equation}
+\end{definition}
+
+\begin{theorem}
+  Suppose $e_1, \dots, e_n$ is an orthonormal basis of $V$ and $v \in V$. Then
+  \begin{equation}
+    v = \sum_{i=1}^n \bangle{v, e_i}e_i
+  \end{equation}
+  and
+  \begin{equation}
+    \norm{v}^2 = \sum_{i=1}^n \abs{
+      \bangle{v, e_i}
+    }^2
+  \end{equation}
+\end{theorem}
+
+The following theorem is pretty surprising,
+\begin{theorem}
+  Suppose $V$ is finite-dimensional and $\phi$ is a linear functional on $V$.
+  Then there is a unique vector $u \in  V$ such that
+  \begin{equation}
+    \phi(v) = \bangle{v, u}
+  \end{equation}
+  for every $v \in V$.
+
+  Specifically, the vector $u$ is
+  \begin{equation}
+    u = \sum_{i=1}^n \conj{\phi(e_i)}e_i
+  \end{equation}
+\end{theorem}
+
+\bx{
+  \ea{
+    \item Multiply them together, and use $\sin^2 \theta + \cos^2 \theta = 1$ for the norm.
+    \item Unsure how to do this tbh \TODO
+  }
+}
+
+\bx{
+  Decompose $v$ into the orthogonal parts, and then take the inner product with itself to find the norm.
+}
+
+I'm too lazy to do G-S and the rest of the problems, rip, but I think the results in this chapter were cool, esp with Riesz.

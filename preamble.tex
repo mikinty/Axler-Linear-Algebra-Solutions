@@ -16,7 +16,7 @@
 \usepackage{subfig}
 \usepackage{soul}
 \usepackage{tikz}
-\usetikzlibrary{patterns}
+\usetikzlibrary{angles, patterns}
 \usetikzlibrary{decorations.pathmorphing}
 \usepackage{titling}
 \usepackage{verbatim}
@@ -38,9 +38,11 @@
 \DeclarePairedDelimiter{\paren}{(}{)}
 \DeclarePairedDelimiter{\bracken}{[}{]}
 \DeclarePairedDelimiter{\bracen}{\{}{\}}
+\DeclarePairedDelimiter{\rlangle}{\langle}{\rangle}
 \newcommand{\pa}[1]{\paren*{#1}}
 \newcommand{\pbra}[1]{\bracken*{#1}}
 \newcommand{\pbrac}[1]{\bracen*{#1}}
+\newcommand{\bangle}[1]{\rlangle*{#1}}
 
 % Math symbols
 \newcommand{\C}{\bm{C}}
@@ -49,7 +51,7 @@
 \newcommand{\R}{\bm{R}}
 \newcommand{\Q}{\bm{Q}}
 \renewcommand{\L}{\mathcal{L}}
-\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\conj[1]{\overline{#1}}
 \newcommand{\interior}[1]{%
   {\kern0pt#1}^{\mathrm{o}}%
 }

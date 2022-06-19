@@ -1,0 +1,42 @@
+\section{Orthogonal Complements and Minimization Problems}
+
+\begin{definition}
+  If $U$ is a subset of $V$, then the \textbf{orthogonal complement} of $U$, denoted $U^\perp$, is the set of all vectors in $V$ that are orthogonal to every vector in $U$:
+  \begin{equation}
+    U^\perp = \pbrac{
+      v \in V \,:\, \bangle{v, u} = 0, \forall u \in U
+    }
+  \end{equation}
+\end{definition}
+
+The following theorem is a good optimization technique used in many fields,
+\begin{theorem}
+  Suppose $U$ is a finite-dimensional subspace of $V, v\in V$, and $u \in U$. Then
+  \begin{equation}
+    \norm{
+      v - P_Uv
+    } \leq
+    \norm{
+      v -u
+    }.
+  \end{equation}
+  Furthermore, the inequality is an equality iff $u = P_Uv$.
+\end{theorem}
+
+\bx{
+  We can show this by using $V = U \oplus U^\perp$.
+}
+
+\bx{
+  We can show this by using $V = U \oplus U^\perp$.
+}
+
+\bx{
+  Our earlier exercises tell us the $u_i$ span $U$ and $w_1$ span $U^\perp$.
+
+  Now if we apply Gram-Schmidt, the corresponding orthonormal vectors will still span the same spaces.
+}
+
+\bx{
+  Too lazy to do G-S.
+}
