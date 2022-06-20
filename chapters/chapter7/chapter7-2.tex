@@ -1,0 +1,62 @@
+\section{The Spectral Theorem}
+
+One of the most lit theorems in Linear Algebra, listen up.
+
+\begin{theorem}
+  Suppose $\F = \C$ and $T \in \L(V)$. Then the following are equivalent:
+  \ea{
+    \item $T$ is normal.
+    \item $V$ has an orthonormal basis consisting of eigenvectors of $T$.
+    \item $T$ has a diagonal matrix with respect to some orthonormal basis of $V$.
+  }
+  \label{theorem:complex_spectral}
+\end{theorem}
+
+\begin{theorem}
+  Suppose $\F = \R$ and $T \in \L(V)$. Then the following are equivalent:
+  \ea{
+    \item $T$ is self-adjoint.
+    \item $V$ has an orthonormal basis consisting of eigenvectors of $T$.
+    \item $T$ has a diagonal matrix with respect to some orthonormal basis of $V$.
+  }
+  \label{theorem:real_spectral}
+\end{theorem}
+
+\bx{
+  Seems like this is true, the spectral theorem is about orthonormal bases and diagonal matrices. In general we can have $T$ with eigenvectors that span $\R^3$.
+}
+
+\bx{
+  Do we just factor this to $(T - 2I)(T - 3I) = 0$?
+}
+
+\bx{
+  If we choose
+  \begin{equation*}
+    T = \begin{pmatrix}
+      2 & 1 & 1 \\
+      0 & 2 & 1 \\
+      0 & 0 & 3
+    \end{pmatrix}
+  \end{equation*}
+  Then we have the expression equal to
+  \begin{equation*}
+    T^2 - 5T + 6I = \begin{pmatrix}
+      0 & -1 & 1 \\
+      0 & 0  & 0 \\
+      0 & 0  & 0
+    \end{pmatrix}
+  \end{equation*}
+}
+
+\bx{
+  If $T$ is normal, by the Complex Spectral Theorem (\ref{theorem:complex_spectral}), we know these statements are true.
+}
+
+\bx{
+  This is the Real Spectral Theorem (\ref{theorem:real_spectral}).
+}
+
+\bx{
+  \TODO
+}

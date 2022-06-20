@@ -1,0 +1,143 @@
+\section{Self-Adjoint and Normal Operators}
+
+Adjoint operators are used a lot in higher-level physics classes, especially in quantum.
+
+\begin{definition}
+  Suppose $T \in \L(V, W)$. The \textbf{adjoint} of $T$ is the function $\adj{T}:W\to V$ such that
+  \begin{equation}
+    \bangle{
+      Tv, w
+    } = \bangle{
+      v, \adj{T}w
+    }
+  \end{equation}
+  for every $v\in V$ an every $w \in W$.
+\end{definition}
+
+\begin{theorem}
+  If $T \in \L(V, W)$, then $\adj{T} \in \L(W, V)$.
+\end{theorem}
+
+\begin{definition}
+  An operator on an inner product space is called \textbf{normal} if it commutes with its adjoint.
+
+  So $T \in \L(V)$ is normal if
+  \begin{equation}
+    T\adj{T} = \adj{T}T.
+  \end{equation}
+\end{definition}
+
+\bx{
+  \begin{align*}
+    \bangle{
+      (z_1, \dots, z_n),
+      \adj{T}(x_1, \dots, x_n)
+    }
+     & = \bangle{
+      T(z_1, \dots, z_n),
+      (x_1, \dots, x_n)
+    }                            \\
+     & = \bangle{
+      (0, z_1, \dots, z_{n-1}),
+      (x_1, \dots, x_n)
+    }                            \\
+     & = \sum_{i=2}^n x_iz_{i-1} \\
+     & = \bangle{
+      (z_1, \dots, z_{n-1}, z_n),
+      (x_2, \dots, x_n, 0)
+    }
+  \end{align*}
+  So we see that
+  \begin{equation}
+    \adj{T}(x_1, \dots, x_n) =
+    (x_2, \dots, x_n, 0).
+  \end{equation}
+}
+
+\bx{
+  \begin{align*}
+    \bangle{
+      \lambda v, v
+    }
+     & = \bangle{
+      Tv, v
+    }             \\
+     & = \bangle{
+      v, \adj{T}v
+    }             \\
+     & = \bangle{
+      v, \conj{\lambda} v
+    }
+  \end{align*}
+}
+
+\bx{
+  Let $u \in U, u' \in U^\perp$,
+  \begin{equation}
+    \bangle{Tu, u'} = 0 \iff \bangle{u, \adj{T}u'} = 0
+  \end{equation}
+}
+
+\bx{
+  skip
+}
+
+\bx{
+  skip
+}
+
+\bx{
+  \ea{
+    \item We see that
+    \begin{align*}
+      \bangle{Tp, q} & = p_1x \\
+      \bangle{p, Tq} & = q_1x
+    \end{align*}
+    and these expressions are not equal.
+
+    \item Our basis is not orthonormal.
+  }
+}
+
+\bx{
+  If $ST$ is self-adjoint, then
+  \begin{align*}
+    ST & = \adj{(ST)} \tag{self-adjoint}           \\
+       & = \adj{T}\adj{S} \tag{adjoint properties} \\
+       & = TS \tag{$S, T$ self-adjoint}
+  \end{align*}
+
+  If $ST = TS$, then we have
+  \begin{align*}
+    \adj{(ST)} & = \adj{T}\adj{S}               \\
+               & = TS \tag{$S, T$ self-adjoint} \\
+               & = ST. \tag{by assumption}
+  \end{align*}
+}
+
+\bx{
+  \begin{enumerate}[label=(\roman*)]
+    \item $0$ is self-adjoint.
+    \item Suppose $S, T$ are self-adjoint. Then
+          \begin{equation*}
+            \adj{(S+T)} = \adj{S} + \adj{T} = S + T
+          \end{equation*}
+    \item Suppose $S$ is self-adjoint. Then
+          \begin{align*}
+            \bangle{\lambda Sv, w}
+             & = \lambda \bangle{Sv, w}        \\
+             & = \lambda\bangle{v, \adj{S}w}   \\
+             & = \bangle{v, \conj{\lambda}S w}
+          \end{align*}
+          I think $\lambda \in \F$ so we're good here, so $\conj{\lambda} = \lambda$?
+  \end{enumerate}
+}
+
+\bx{
+  Additivity fails because if we try
+  \begin{align*}
+    (T+S)\adj{(S+T)} & = (T+S)(\adj{S} + \adj{T})                   \\
+                     & = T\adj{S} + S\adj{S} + S\adj{T} + T\adj{T},
+  \end{align*}
+  we're quickly stuck because $T$ and $S$ have no guarantees between them about commutativity.
+}
