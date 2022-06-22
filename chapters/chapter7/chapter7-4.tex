@@ -1,0 +1,33 @@
+\section{Polar Decomposition and Singular Value Decomposition}
+
+SVD is used extensively in Computer Vision.
+
+\begin{theorem}
+  Polar Decomposition. Suppose $T \in \L(V)$. Then $\exists$ isometry $S \in \L(V)$ such that
+  \begin{equation}
+    T = S \sqrt{\adj{T}T}.
+  \end{equation}
+\end{theorem}
+
+Note that in the proof, we used the fact that $\sqrt{\adj{T}{T}}$ is a self-adjoint square root, so we were able to pull off
+\begin{equation*}
+  \bangle{
+    \sqrt{\adj{T}T}\sqrt{\adj{T}T}v, v
+  }
+  = \bangle{
+    \sqrt{\adj{T}T}v, \sqrt{\adj{T}T}v
+  }
+\end{equation*}
+
+\begin{definition}
+  Suppose $T \in \L(V)$. The \textbf{singular values} of $T$ are the eigenvalues of $\sqrt{\adj{T}T}$, with each eigenvalue $\lambda$ repeated $\dim E(\lambda, \sqrt{\adj{T}T})$ times.
+\end{definition}
+
+\begin{theorem}
+  Singular Value Decomposition. Suppose $T \in \L(V)$ has singular values $s_1, \dots, s_n$. Then $\exists$ orthonormal bases $e_1, \dots, e_n$ and $f_1, \dots, f_n$ of $V$ such that
+  \begin{equation}
+    Tv = \sum_{i=1}^n s_i\bangle{v, e_i}f_i, \forall v \in V.
+  \end{equation}
+\end{theorem}
+
+Too lazy to do these exercises :(

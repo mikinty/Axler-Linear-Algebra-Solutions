@@ -1,0 +1,111 @@
+\section{Positive Operators and Isometrics}
+
+\begin{definition}
+  An operator $T \in \L(V)$ is called \textbf{positive} if $T$ is self-adjoint and
+  \begin{equation}
+    \forall v\in V \quad
+    \bangle{
+      Tv, v
+    } \geq 0
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  An operator $S \in \L(V)$ is called an \textbf{isometry} if
+  \begin{equation}
+    \norm{Sv} = \norm{v}, \forall v \in V.
+  \end{equation}
+  An operator is an isometry if it preserves norms.
+\end{definition}
+
+\bx{
+  Consider some $v \in V$. We can represent $v$ as part of the orthonormal basis
+  \begin{equation*}
+    v = \sum_{i=1}^n a_i e_i
+  \end{equation*}
+  and now if we consider the positive operator definition
+  \begin{align*}
+    \bangle{
+      Tv, v
+    } & = \sum_{i=1}^n \bangle{
+      T(a_ie_i), v
+    }                                              \\
+      & = \sum_{i=1}^n \bangle{
+      T(a_ie_i), a_ie_i
+    } \tag{Since $\bangle{e_i, e_j} = 0, i\neq j$} \\
+      & = \sum_{i=1}^n a_i^2 \bangle{
+      T(e_i), e_i
+    } \geq 0.
+  \end{align*}
+  So we can conclude that $T$ is a positive operator.
+}
+
+\setcounter{exercise}{2}
+
+\bx{
+  If $U$ is invariant under $T\vert_U$, then $T\vert_U u \in U$.
+
+  Now, we have
+  \begin{equation*}
+    \bangle{T\vert_U u, u} \geq 0
+  \end{equation*}
+  since $u \in U \subset V \implies u \in V$, and $T$ is a positive operator on $V$.
+
+  This solution seems kinda fishy since I didn't really use the invariant property.
+  Perhaps it's just to say that $T$ only operates within $U$?
+  We already know that any element $v \in V$ satisfies the positive operator condition, and every element of $U$ is in $V$...
+}
+
+\bx{
+  For $v \in V$,
+  \begin{align*}
+    \bangle{
+      \adj{T}Tv, v
+    } & = \bangle{
+      Tv, Tv
+    } \geq 0
+  \end{align*}
+
+  For $w \in W$,
+  \begin{align*}
+    \bangle{
+      T\adj{T}w, w
+    } & = \bangle{
+      \adj{T}v, \adj{T}v
+    } \geq 0
+  \end{align*}
+}
+
+\bx{
+  Suppose we have $S, T$ positive operators on $V$. Then for $v \in V$,
+  \begin{align*}
+    \bangle{(S+T)v, v}
+     & = \bangle{
+      Sv + Tv, v
+    }             \\
+     & = \bangle{
+      Sv, v
+    } + \bangle{
+      Tv, v
+    } \geq 0
+  \end{align*}
+}
+
+\bx{
+  We proceed by induction.
+
+  Base case $k=1$ is easy since that's just the definition.
+
+  Suppose we have $\bangle{T^kv, v} \geq 0$ for some $k \geq 1$.
+  Now, consider $\bangle{T^{k+1}v, v}$.
+  We know that $T$ has an orthonormal basis with nonnegative eigenvalues $\lambda_i$.
+  Then if we consider
+  \begin{equation*}
+    \bangle{T^kv, v} = \sum_{i=1}^n \bangle{a_ie_i, e_i}
+  \end{equation*}
+  then if we multiply by $T$, we have
+  \begin{equation*}
+    \bangle{T^{k+1}v, v} = \sum_{i=1}^n \bangle{\lambda_i a_ie_i, e_i} = \geq 0
+  \end{equation*}
+  We have to show that $a_i \geq 0$, but this we can prove with a lemma with the positive eigenvalues.
+}
