@@ -1,0 +1,117 @@
+\section{Characteristic and Minimal Polynomials}
+
+\begin{definition}
+  Suppose $V$ is a complex vector space and $T \in \L(V)$. Let $\lambda_1, \dots, \lambda_m$ denote the distinct eigenvalues of $T$, with multiplicities $d_1, \dots, d_m$.
+  The polynomial
+  \begin{equation}
+    \prod_{i=1}^m (z - \lambda_i)^{d_i}
+  \end{equation}
+  is called the \textbf{characteristic polynomial} of $T$.
+\end{definition}
+
+\begin{theorem}
+  Cayley-Hamilton Theorem. Suppose $V$ is a complex vector space and $T \in \L(V)$.
+  Let $q$ denote the characteristic polynomial of $T$. Then $q(T) = 0$.
+  \label{theorem:cayley_hamilton}
+\end{theorem}
+
+\textbf{NOTE:} I'm guessing for the most part for some of the operators since I'm lazy.
+
+\bx{
+  This follows directly from the Cayley-Hamilton Theorem \ref{theorem:cayley_hamilton}, after factoring out the extra multiplicity.
+  \label{chap8:3:problem:1}
+}
+
+\bx{
+  This follows directly from the Cayley-Hamilton Theorem \ref{theorem:cayley_hamilton}, after factoring out the extra multiplicity.
+  It's pretty much just another special case compared to Exercise \ref{chap8:3:problem:1}.
+}
+
+\bx{
+  We just need $\lambda = 7, 8$, both multiplicity of $2$. So the following should do
+  \begin{equation*}
+    T = \begin{pmatrix}
+      7 & 0 & 0 & 0 \\
+      0 & 7 & 0 & 0 \\
+      0 & 0 & 8 & 0 \\
+      0 & 0 & 0 & 8 \\
+    \end{pmatrix}
+  \end{equation*}
+}
+
+\bx{
+  I'm just guessing, but
+  \begin{equation*}
+    T = \begin{pmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & 5 & 0 & 0 \\
+      0 & 0 & 5 & 1 \\
+      0 & 0 & 0 & 5 \\
+    \end{pmatrix}
+  \end{equation*}
+  My guess is that having not just an entirely diagonal matrix should help us with the minimum polynomial only being able to being reduced to $(z-5)^2$.
+}
+
+\bx{
+  \begin{equation*}
+    T = \begin{pmatrix}
+      0 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 3 & 1 \\
+      0 & 0 & 0 & 3 \\
+    \end{pmatrix}
+  \end{equation*}
+}
+
+\bx{
+  \begin{equation*}
+    T = \begin{pmatrix}
+      0 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 3 & 0 \\
+      0 & 0 & 0 & 3 \\
+    \end{pmatrix}
+  \end{equation*}
+}
+
+\bx{
+  We can refactor to
+  \begin{equation*}
+    P(P-I) = 0,
+  \end{equation*}
+  and if we consider $P(P-I)v = 0$, then we get our desired result, $Pv = 0$ for our null space, and $(P-I)v = 0$ will give our complementary space, which will be $\dim \vrange P$\footnote{this last part I'm not actually sure about, and I didn't formally prove it}.
+}
+
+\bx{
+  Not sure if there are tricks here, but I think you factor, and then take $1/\lambda$ for all the roots $\lambda$ in the characteristic polynomial of $T$.
+}
+
+\bx{
+  We know what the characteristic polynomial of $T^{-1}$ looks like, so let's manipulate it.
+  Call the char. poly. of $T^{-1}$ $q(z)$, then
+  \begin{align*}
+    q(z)
+     & = \prod_{i=1}^{\dim V} \pa{
+      z - \frac{1}{\lambda_i}
+    }                                                                                       \\
+     & = z^{\dim V}\prod_{i=1}^{\dim V} \pa{
+      1 - \frac{1}{z\lambda_i}
+    }                                                                                       \\
+     & = \pa{\prod_{i=1}^{\dim V} -\frac{1}{\lambda_i}} z^{\dim V}\prod_{i=1}^{\dim V} \pa{
+      1 - \frac{1}{z}
+    }                                                                                       \\
+     & = \frac{1}{p(0)} z^{\dim V} p\pa{\frac{1}{z}}
+  \end{align*}
+  The last result comes from the fact that
+  \begin{align*}
+    p(0)
+     & = \prod_{i=1}^{\dim V} \pa{0 - \lambda_i} \\
+     & = \prod_{i=1}^{\dim V} (- \lambda_i).
+  \end{align*}
+
+  \label{chapter8:3:problem10}
+}
+
+\bx{
+  Just use Exercise \ref{chapter8:3:problem10}.
+}

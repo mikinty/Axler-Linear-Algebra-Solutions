@@ -3,3 +3,102 @@
 \section{Showing Something is Linear}
 
 You need to show additivity and scalar multiplication.
+
+\section{AFSOC}
+
+Reminder that AFSOC is still a great proof technique! Assume a contradiction and then look for something wrong.
+
+\section{Linear Independence}
+
+Remember the definition of linear independence,
+\begin{definition}
+  \begin{itemize}
+    \item A list $v_1, \dots, v_m$ of vectors in $V$ is called \textbf{linearly independent} if the only choice $a_1, \dots, a_m \in \mathbf{F}$ that makes
+          \begin{equation*}
+            \sum_{i=1}^m a_iv_i = 0
+          \end{equation*}
+          is $a_1 = \cdots = a_m = 0$.
+    \item The empty list $()$ is also declared to be linearly independent.
+  \end{itemize}
+\end{definition}
+
+\section{Decomposition}
+
+If we can decompose an operator (matrix) into an orthonormal basis, or into eigenvalues, it can often be helpful in the proofs, as we know a lot of these particular bases.
+
+\chapter{Computation Skills}
+
+Linear algebra often has a lot of computation skills. We list how to do certain common operations here.
+
+\section{Null Space}
+
+You are trying to find for $T \in \L(V), v \in V$, which
+\begin{equation*}
+  Tv = 0.
+\end{equation*}
+In practice, the best way to do this is to reduce $T$ into row-echelon form, and then write each pivot in terms of other variables, which will be the ``free variables.''
+
+\begin{example}
+  Find the null space for the following operator,
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & -2 & 0 & 3 & 0  & 0 & 2  \\
+      0 & 0  & 3 & 7 & -8 & 0 & 9  \\
+      0 & 0  & 0 & 0 & 0  & 1 & -4
+    \end{pmatrix}v = 0
+  \end{equation*}
+  We can see for $v = (x_1, x_2, x_3, x_4, x_5, x_6, x_7)$ that we can find the equations
+  \begin{align*}
+    x_1 & = 2x_2 -3x_4 - 2x_7                       \\
+    x_3 & = -\frac{7}{3}x_4 + \frac{8}{3}x_5 - 3x_7 \\
+    x_6 & = 4x_7
+  \end{align*}
+  so our null space is
+  \begin{equation*}
+    \vnull T
+    = x_2 \begin{pmatrix}
+      2 \\ 1 \\ 0\\ 0\\ 0\\ 0\\ 0\\ 0
+    \end{pmatrix} +
+    x_4 \begin{pmatrix}
+      -3 \\ 0 \\ -\frac{7}{3}\\ 0\\ 1\\ 0\\ 0\\ 0
+    \end{pmatrix} +
+    x_5 \begin{pmatrix}
+      0 \\ 0 \\ \frac{8}{3}\\ 0\\ 0\\ 1\\ 0\\ 0
+    \end{pmatrix} +
+    x_7 \begin{pmatrix}
+      -2 \\ 0 \\ -3 \\ 0\\ 0\\ 0\\ 4\\ 1
+    \end{pmatrix}
+    = \vspan\pbrac{
+      \begin{pmatrix}
+        2 \\ 1 \\ 0\\ 0\\ 0\\ 0\\ 0\\ 0
+      \end{pmatrix} +
+      \begin{pmatrix}
+        -3 \\ 0 \\ -\frac{7}{3}\\ 0\\ 1\\ 0\\ 0\\ 0
+      \end{pmatrix} +
+      \begin{pmatrix}
+        0 \\ 0 \\ \frac{8}{3}\\ 0\\ 0\\ 1\\ 0\\ 0
+      \end{pmatrix} +
+      \begin{pmatrix}
+        -2 \\ 0 \\ -3 \\ 0\\ 0\\ 0\\ 4\\ 1
+      \end{pmatrix}
+    }
+  \end{equation*}
+  The idea here is to write our null space vectors in terms of the ``free variables,'' which together determine the pivot variables.
+\end{example}
+
+\section{Eigenvectors and Eigenvalues}
+
+\subsection{Generalized Eigenvectors and Eigenvalues}
+
+\chapter{Some Thoughts}
+
+I thought this book was a very readable book, especially for someone who has taken an intro linear algebra course.
+Therefore, difficulty probably is somewhere around a medium (maybe 5/10).
+
+I think the results in this book generalize nicely above a more application-based linear algebra course, which will hopefully transition well to more pure math after this book.
+
+Some improvements on the book
+\begin{itemize}
+  \item There isn't much practical advice given on how to find eigenvalues and eigenvectors. There is an assumption that Gaussian elimination, finding null space and all the fun skills that you learn in an intro class are known by the reader, but it would be good to employ it in some cases, finding null space and all the fun skills that you learn in an intro class are known by the reader, but it would be good to employ it in some cases.
+  \item A lot of the examples are pretty trivial, which doesn't really help the reader's problem solving skills.
+\end{itemize}

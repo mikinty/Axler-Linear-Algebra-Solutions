@@ -1,0 +1,135 @@
+\section{Generalized Eigenvectors and Nilpotent Operators}
+
+\begin{definition}
+  Suppose $T \in \L(V)$ and $\lambda$ is an eigenvalue of $T$. A vector $v \in V$ is called a \textbf{generalized eigenvector} of $T$ corresponding to $\lambda$ if $v \neq 0$ and
+  \begin{equation}
+    \pa{
+      T - \lambda I
+    }^jv = 0
+  \end{equation}
+  for some $j \in \Z^+$.
+\end{definition}
+
+\begin{definition}
+  Suppose $T \in \L(V)$ and $\lambda \in \F$. The \textbf{generalized eigenspace} of $T$ corresponding to $\lambda$, denoted $G(\lambda, T)$, is defined to be the set of all generalized eigenvectors of $T$ corresponding to $\lambda$, along with the 0 vector.
+\end{definition}
+
+\begin{definition}
+  An operator is called \textbf{nilpotent} if some power of it equals 0.
+\end{definition}
+
+\bx{
+  Guessing eigenvalues will give us 0. We can also solve the system
+  \begin{align*}
+    \lambda w & = z  \\
+    \lambda z & = 0.
+  \end{align*}
+
+  Now to find the generalized spaces, we raise $T$ minus the eigenvalue to $2$ since that's the dimension of the space,
+  \begin{align*}
+    T^2(x, y) & = (0, 0) \implies (x, y) \text{ in null space} \\
+  \end{align*}
+  so we have $G(0, T) = \pbrac{(x, y): x, y \in \C}$.
+
+  We can check our answer that this sole eigenspace spans $\C^2$.
+}
+
+\bx{
+  To find the eigenvalues,
+  \begin{align*}
+    \lambda w            & = -z                 \\
+    \lambda z            & = w                  \\
+    \implies \lambda w   & = -\frac{w}{\lambda} \\
+    \implies \lambda^2 w & = -1
+  \end{align*}
+  which leads us to see that $\lambda = \pm i$.
+
+  We can see that
+  \begin{equation*}
+    T = \begin{pmatrix}
+      0 & -1 \\
+      1 & 0
+    \end{pmatrix}
+  \end{equation*}
+  So if we calculate
+  \begin{align*}
+    \pa{
+      T - (i)I
+    }^{\dim(\C^2)}
+     & = \begin{pmatrix}
+           -i & -1 \\
+           1  & -i
+         \end{pmatrix}^2
+    = \begin{pmatrix}
+        -2  & 2i \\
+        -2i & -2
+      \end{pmatrix}     \\
+    \pa{
+      T - (-i)I
+    }^{\dim(\C^2)}
+     & = \begin{pmatrix}
+           i & -1 \\
+           1 & i
+         \end{pmatrix}^2
+    = \begin{pmatrix}
+        -2 & -2i \\
+        2i & -2
+      \end{pmatrix}
+  \end{align*}
+  The null spaces are
+  \begin{align*}
+    G(i, T)  & = \vspan\pbrac{
+      \begin{pmatrix}
+        i \\
+        1
+      \end{pmatrix}
+    }                          \\
+    G(-i, T) & = \vspan\pbrac{
+      \begin{pmatrix}
+        -i \\
+        1
+      \end{pmatrix}
+    }
+  \end{align*}
+}
+
+\bx{
+  We now need to show that the $G\pa{\frac{1}{\lambda}, T^{-1}} = G(\lambda, T)$ is the same.
+  We can show this by
+  \begin{align*}
+    \vnull (T - \lambda I)^{\dim V}v                  & = 0                                               \\
+    \vnull (I - \lambda T^{-1}I)^{\dim V}v            & = 0 \tag{Multiply by $\pa{T^{-1}}^{\dim V}$}      \\
+    \vnull \pa{\frac{1}{\lambda}I - T^{-1}}^{\dim V}v & = 0 \tag{Multiply by $(1/\lambda)^{\dim V}$}      \\
+    \vnull \pa{T^{-1} - \frac{1}{\lambda}I}^{\dim V}v & = 0 \tag{Notice negative doesn't matter, RHS$=0$}
+  \end{align*}
+}
+
+\bx{
+  AFSOC $\exists v \neq 0$ such that $v \in G(\alpha, T) \cap G(\beta, T)$.
+
+  Then $v, v$ must be linearly independent by 8.13, since generalized eigenvectors corresponding to distinct eigenvalues must be linearly independent.
+  But that's a contradiction, since $v, v$ is clearly linearly dependent.
+}
+
+\bx{
+  I think first, we have to show that $T^k v \neq 0$ for $k < m$.
+  This is pretty easy to show, because if $T^j v = 0$ for some $j < m$, then $T^k v = 0$ for $k \in [j, m]$, which is a contradiction since we know $T^{m-1}v \neq 0$.
+
+  Now for the main proof, we will proceed by induction.
+
+  $m = 0$ case is trivial, since we only have one vector.
+
+  Suppose we have $m > 0$, so we have $\pbrac{T^kv, k < m}$ are linearly independent.
+  \begin{equation*}
+    T^m v = 0
+  \end{equation*}
+  AFSOC $T^m v$ is linearly dependent on the previous $\pbrac{T^kv, k < m}$ vectors.
+  Then we have
+  \begin{align*}
+    T^m v & = \sum_{i=0}^{m-1} a_i T^{i}v \\
+    0     & = \sum_{i=0}^{m-1} a_i T^{i}v
+  \end{align*}
+  which implies $a_i = 0, \forall i$, which is a contradiction, since that means $T^m v$ is not linearly dependent.
+
+  Therefore we conclude that $\pbrac{T^kv, 0 \leq k \leq m}$ are linearly independent.
+}
