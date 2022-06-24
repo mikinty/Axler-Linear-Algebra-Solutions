@@ -1,0 +1,70 @@
+\section{Trace}
+
+Ah...we're finally dealing with concrete matrices and numbers.
+This is stuff you should be familiar with from Linear Algebra I.
+
+\begin{definition}
+  Suppose $T \in \L(V)$.
+  \begin{itemize}
+    \item If $\F = \C$, then the \textbf{trace} of $T$ is the sum of eigenvalues of $T$, with each eigenvalue repeated according to its multiplicity.
+    \item If $\F = \R$, then the \textbf{trace} of $T$ is the sum of eigenvalues of $T_{\C}$, with each eigenvalue repeated according to its multiplicity.
+  \end{itemize}
+  The trace of $T$ is denoted $\vtrace T$.
+
+  We also later see that the \textbf{trace} of a square matrix $A$, denoted $\vtrace A$, is defined to be the sum of the diagonal entries of $A$.
+\end{definition}
+
+\bx{
+  Not sure how the author wants this to be proved, but every $T$ has a corresponding matrix $\mathcal{M}$, so if $T$ is invertible, then its matrix for the inverse must exist as well.
+}
+
+\bx{
+  Inverses are unique so we know $B = A^{-1}$.
+}
+
+\bx{
+  This means for the matrix $\M$ of $T$, we have
+  \begin{equation*}
+    \M = A^{-1}\M A
+  \end{equation*}
+  for any change of basis. This isn't formal, but only $\M = I$ satisfies this equation it seems $\forall A$.
+}
+
+\bx{
+  $T$ acts like the identity. We have to formalize this, but I think you can just use the linear combination fact, so first choose some $w \in V$, then
+  \begin{align*}
+    w &= \sum a_i v_i \\
+    w &= \sum b_i u_i
+  \end{align*}
+  And now we can show $Tw = w$, by two steps, first
+  \begin{align*}
+    Tw &= \sum T(a_i v_i) \text{ and } Tw = \sum T(b_i u_i)\\
+    \implies \sum (a_i - b_i)v_i = 0
+  \end{align*}
+  so we know that $a_i = b_i$.
+
+  Now, we can show that
+  \begin{align*}
+    Tw &= \sum T(a_i v_i) \\
+    &= \sum a_i u_i \\
+    &= \sum b_i u_i (a_i = b_i)\\
+    &= w
+  \end{align*}
+  so we have shown that $T = I$.
+}
+
+\bx{
+  Change the basis to the eigenvectors, or any basis with an upper triangular matrix.
+}
+
+\bx{
+  I think we want complex eigenvalues like $i$ twice, so $T^2$ will have $-2$ as the trace.
+}
+
+\bx{
+  We have the eigenvector basis, and we know that the trace of $T^2$ is just $\sum \abs{\lambda}^2$.
+
+  I think...I'm assuming our matrix is diagonal, although I think it's actually only upper triangular.
+}
+
+Alright, too lazy to do the rest and there's one more chapter left.

@@ -1,0 +1,36 @@
+\section{Determinant}
+
+\begin{definition}
+  Suppose $T \in \L(V)$.
+  \begin{itemize}
+    \item If $\F = \C$, then the \textbf{determinant} of $T$ is the product of the eigenvalues of $T$, with each eigenvalue repeated according to its multiplicity.
+    \item If $\F = \R$, then the \textbf{determinant} of $T$ is the product of the eigenvalues of $T_{\C}$, with each eigenvalue repeated according to its multiplicity.
+  \end{itemize}
+  The determinant of $T$ is denoted by $\vdet T$.
+
+  We later find out to calculate the determinant, for
+  \begin{equation}
+    A = \begin{pmatrix}
+      A_{1, 1} & \cdots A_{1, n}          \\
+      \vdots   &                 & \vdots \\
+      A_{n, 1} & \cdots A_{n, n}
+    \end{pmatrix},
+  \end{equation}
+  we calculate
+  \begin{equation}
+    \vdet A = \sum_{(m_1, \dots, m_n) \in \text{perm }n} \pa{
+      \text{sign}\pa{
+        m_1, \dots, m_n
+      }
+    } A_{m_1, 1} \cdots A_{m_n, n}.
+  \end{equation}
+\end{definition}
+
+Most of the proofs in this chapter are pretty bash-y, meaning we just have to explicitly calculate sums and products of matrix entries.
+
+The ending stuff about geometries and polar coordinates and spherical coordinates felt pretty rushed, and was a weird addition to a mostly pure-math book.
+I think those topics suit better in a course with more physics or geometry applications.
+
+Sorry...not going to do these exercises.
+
+Was overall a fun read though :)
