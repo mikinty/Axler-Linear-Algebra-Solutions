@@ -11,3 +11,9 @@ Lastly, if you found this guide helpful, consider [buying me a coffee](https://w
 ## Note
 
 I pretty much sped through this book (read it in about a week with solutions), so I ended up skipping a lot of problems. I still hope my notes and solution attempts are useful though.
+
+## Other Math Solutions by Me
+
+- [Understanding Analysis by Abbott](https://github.com/mikinty/Understanding-Analysis-Abbott-Solutions)
+- [Principles of Analysis by Rudin](https://github.com/mikinty/Baby-Rudin-Solutions)
+- [Topology by Munkres](https://github.com/mikinty/Topology-Munkres-Solutions)
